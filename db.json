@@ -1,0 +1,28 @@
+{
+  "accounts": [
+    {
+      "id": 6513,
+      "accountHolder": "Johnny Appleseed",
+      "checking": 100,
+      "savings": 1000
+    },
+    {
+      "id": 8161,
+      "accountHolder": "Jane Doe",
+      "checking": 200,
+      "savings": 2000
+    },
+    {
+      "id": 708,
+      "accountHolder": "Adam Cross",
+      "checking": 300,
+      "savings": 3000
+    },
+    {
+      "id": 9331,
+      "accountHolder": "Alex Rider",
+      "checking": 1000,
+      "savings": 4000
+    }
+  ]
+}

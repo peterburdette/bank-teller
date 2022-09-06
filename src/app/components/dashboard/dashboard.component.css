@@ -1,0 +1,11 @@
+#wrapper {
+  margin: 20px auto;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#wrapper div {
+  padding: 20px;
+  min-width: 45%;
+}

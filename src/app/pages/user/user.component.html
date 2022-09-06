@@ -1,0 +1,171 @@
+<div class="container-centered">
+  <button
+    routerLink="/"
+    mat-icon-button
+    color="primary"
+    aria-label="Go back to Dashboard"
+  >
+    <mat-icon>keyboard_backspace</mat-icon>
+  </button>
+</div>
+<mat-card id="wrapper">
+  <div>
+    <mat-form-field appearance="standard">
+      <mat-label>Account ID:</mat-label>
+      <input matInput value="{{ currentAccount[0]?.id }}" disabled />
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>Account Holder:</mat-label>
+      <input matInput value="{{ currentAccount[0]?.accountHolder }}" disabled />
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>Checking:</mat-label>
+      <input matInput value="${{ currentAccount[0]?.checking }}" disabled />
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>Savings:</mat-label>
+      <input matInput value="${{ currentAccount[0]?.savings }}" disabled />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <form (ngSubmit)="onSubmit()" novalidate>
+      <!-- <mat-radio-group aria-label="Select an option">
+        <mat-radio-button
+          id="deposit"
+          value="Deposit"
+          name="deposit"
+          checked="checked"
+          [(ngModel)]="value"
+          >Deposit</mat-radio-button
+        >
+        <mat-radio-button
+          id="withdraw"
+          value="Withdraw"
+          name="withdraw"
+          [(ngModel)]="value"
+          >Withdraw</mat-radio-button
+        >
+        <mat-radio-button
+          id="transfer"
+          value="Transfer"
+          name="transfer"
+          [(ngModel)]="value"
+          >Transfer</mat-radio-button
+        >
+      </mat-radio-group> -->
+
+      <!-- START DEPOSIT -->
+      <div>
+        <input
+          id="deposit"
+          type="radio"
+          value="Deposit"
+          name="action"
+          [(ngModel)]="value"
+        />
+        <label for="deposit">Deposit</label>
+      </div>
+      <!-- END DEPOSIT -->
+
+      <!-- START WITHDRAW -->
+      <div>
+        <input
+          id="withdraw"
+          type="radio"
+          value="Withdraw"
+          name="action"
+          [(ngModel)]="value"
+        />
+        <label for="withdraw">Withdraw</label>
+      </div>
+
+      <div *ngIf="value == 'Withdraw'" class="indention">
+        <div>
+          <input
+            id="fromChecking"
+            type="radio"
+            value="Checking"
+            name="withdrawTarget"
+            [(ngModel)]="withdrawTarget"
+          />
+          <label for="fromChecking">From Checking</label>
+        </div>
+
+        <div>
+          <input
+            id="fromSavings"
+            type="radio"
+            value="Savings"
+            name="withdrawTarget"
+            [(ngModel)]="withdrawTarget"
+          />
+          <label for="fromSavings">From Savings</label>
+        </div>
+      </div>
+      <!-- END WITHDRAW -->
+
+      <!-- START TRANSFER -->
+      <div>
+        <input
+          id="transfer"
+          type="radio"
+          value="Transfer"
+          name="action"
+          [(ngModel)]="value"
+        />
+        <label for="transfer">Transfer</label>
+      </div>
+
+      <div *ngIf="value == 'Transfer'" class="indention">
+        <div>
+          <input
+            id="fromCheckingToSavings"
+            type="radio"
+            value="Checking"
+            name="transferDestination"
+            [(ngModel)]="transferDestination"
+          />
+          <label for="fromCheckingToSavings">From Checking to Savings</label>
+        </div>
+
+        <div>
+          <input
+            id="fromSavingsToChecking"
+            type="radio"
+            value="Savings"
+            name="transferDestination"
+            [(ngModel)]="transferDestination"
+          />
+          <label for="fromSavingsToChecking">From Savings to Checking</label>
+        </div>
+      </div>
+      <!-- END TRANSFER -->
+
+      <br />
+
+      <mat-form-field appearance="outline">
+        <mat-label>Amount</mat-label>
+        <input
+          matInput
+          placeholder="$0.00"
+          name="amount"
+          [(ngModel)]="amount"
+        />
+      </mat-form-field>
+
+      <br />
+
+      <button mat-flat-button color="primary" type="submit">
+        {{ value }}
+      </button>
+    </form>
+    <br />
+    <button mat-flat-button color="warn" (click)="deleteAccount()">
+      Close Account
+    </button>
+  </div>
+</mat-card>

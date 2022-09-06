@@ -1,0 +1,9 @@
+.header {
+  flex: 1 1 auto;
+  text-align: center;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}

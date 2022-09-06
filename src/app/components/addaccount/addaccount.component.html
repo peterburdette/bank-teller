@@ -1,0 +1,65 @@
+<form (ngSubmit)="onSubmit()" novalidate>
+  <!-- <div>
+      <label for="accountHolder">Account Holder</label><br />
+      <input
+        type="text"
+        name="accountHolder"
+        id="accountHolder"
+        [(ngModel)]="accountHolder"
+      />
+    </div>
+    <div>
+      <label for="checking">Initial Checking Amount</label><br />
+      <input
+        type="text"
+        name="checking"
+        id="checking"
+        [(ngModel)]="checking"
+        placeholder="$0.00"
+      />
+    </div>
+    <div>
+      <label for="savings">Initial Savings Amount</label><br />
+      <input
+        type="text"
+        name="savings"
+        id="savings"
+        [(ngModel)]="savings"
+        placeholder="$0.00"
+      />
+    </div> -->
+
+  <mat-form-field appearance="outline">
+    <mat-label>Account Holder</mat-label>
+    <input
+      matInput
+      id="accountHolder"
+      name="accountHolder"
+      [(ngModel)]="accountHolder"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Initial Checking Amount</mat-label>
+    <input
+      matInput
+      id="checking"
+      placeholder="$0.00"
+      name="checking"
+      [(ngModel)]="checking"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Initial Savings Amount</mat-label>
+    <input
+      matInput
+      id="savings"
+      placeholder="$0.00"
+      name="savings"
+      [(ngModel)]="savings"
+    />
+  </mat-form-field>
+  <br />
+  <button mat-flat-button color="primary" type="submit">Add Account</button>
+</form>

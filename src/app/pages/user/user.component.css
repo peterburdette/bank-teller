@@ -1,0 +1,15 @@
+#wrapper {
+  margin: 20px auto;
+  width: 450px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-centered {
+  margin: 10px auto 0;
+  width: 50px;
+}
+
+.indention {
+  margin-left: 10px;
+}

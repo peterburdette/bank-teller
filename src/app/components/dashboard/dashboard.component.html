@@ -1,0 +1,21 @@
+<!-- <app-account
+  *ngFor="let account of accountList"
+  [account]="account"
+></app-account> -->
+<mat-card id="wrapper">
+  <div>
+    <h2>Accounts</h2>
+    <mat-divider></mat-divider>
+    <mat-list dense>
+      <app-account-list
+        *ngFor="let account of accountList"
+        [account]="account"
+      ></app-account-list>
+    </mat-list>
+  </div>
+  <div>
+    <h2>Add Account</h2>
+    <!-- <mat-divider></mat-divider> -->
+    <app-addaccount></app-addaccount>
+  </div>
+</mat-card>
